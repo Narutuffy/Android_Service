@@ -15,7 +15,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name=".Background"/>
+
+        <service android:name=".Background" />
+
+        <activity android:name=".Popup"
+            android:label="Pop-up"/>
     </application>
 
 </manifest>
