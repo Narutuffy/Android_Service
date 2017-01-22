@@ -19,7 +19,8 @@
         <service android:name=".Background" />
 
         <activity android:name=".Popup"
-            android:label="Pop-up"/>
+            android:label="Pop-up"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
     </application>
 
 </manifest>
