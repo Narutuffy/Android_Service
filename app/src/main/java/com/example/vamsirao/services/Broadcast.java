@@ -14,5 +14,8 @@ public class Broadcast extends BroadcastReceiver{
     public void onReceive(Context context, Intent intent) {
 
         Toast.makeText(context,"Alarm",Toast.LENGTH_LONG).show();
+        Intent scheduledIntent= new Intent(context,Popup.class);
+        scheduledIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(scheduledIntent);
     }
 }
