@@ -16,8 +16,8 @@
             </intent-filter>
         </activity>
 
-        <service android:name=".Background" />
-
+       <!--<service android:name=".Background" />-->
+        <receiver android:name=".Broadcast"/>
         <activity android:name=".Popup"
             android:label="Pop-up"
             android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
