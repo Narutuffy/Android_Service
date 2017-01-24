@@ -28,7 +28,7 @@ public class MainActivity extends Activity {
         //performing a broadcast with PendingIntent
         PendingIntent pendingIntent= PendingIntent.getBroadcast(
                                         this.getApplicationContext(),0,intent,0);
-        long interval= 60*1000;
+        long interval= 2*60*1000;
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(System.currentTimeMillis());
         calendar.add(Calendar.SECOND, 20);

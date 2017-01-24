@@ -1,10 +1,12 @@
 package com.example.vamsirao.services;
 
 import android.app.Activity;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.MediaController;
@@ -29,6 +31,11 @@ public class Popup extends Activity {
         videoView.setMediaController(mediaController);
         videoView.setVideoURI(uri);
         videoView.requestFocus();
+        mediaController.setVisibility(View.GONE);
+        MediaPlayer mp = MediaPlayer.create(this, uri);
+        int duration = mp.getDuration();
+
+      //  videoView.setMediaController(null);
         videoView.start();
 
 
@@ -38,6 +45,6 @@ public class Popup extends Activity {
             public void run() {
                 finish();
             }
-        },60*1000);
+        },duration);
     }
 }
