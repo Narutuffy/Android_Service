@@ -10,14 +10,21 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
     tools:context="com.example.vamsirao.services.Popup">
-    <TextView
+   <!-- <TextView
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:text="@string/ad"
         android:gravity="center"
         >
 
-    </TextView>
+    </TextView>-->
+    <VideoView
+        android:id="@+id/video_view"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+       android:layout_centerVertical="true"/>
+
+
 
 
 </LinearLayout>
