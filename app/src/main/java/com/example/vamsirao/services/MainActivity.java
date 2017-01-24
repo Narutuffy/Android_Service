@@ -34,7 +34,7 @@ public class MainActivity extends Activity {
         calendar.add(Calendar.SECOND, 20);
         AlarmManager alarmManager= (AlarmManager)getSystemService(ALARM_SERVICE);
         alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),interval,pendingIntent);
-        Toast.makeText(this,"Alarm set in 10 secs",Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"Alarm set in 1min",Toast.LENGTH_SHORT).show();
     }
 
   /*  public void stopService(View view){
