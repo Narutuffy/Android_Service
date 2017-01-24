@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import java.util.Calendar;
+
 public class MainActivity extends Activity {
 
     @Override
@@ -23,12 +25,15 @@ public class MainActivity extends Activity {
     public void startService(View view){
 //        startService(new Intent(getBaseContext(),Background.class));
         Intent intent= new Intent(MainActivity.this,Broadcast.class);
-        //performing a broadcast with pnding intent
+        //performing a broadcast with PendingIntent
         PendingIntent pendingIntent= PendingIntent.getBroadcast(
-                                        this.getApplicationContext(),7777,intent,0);
-
+                                        this.getApplicationContext(),0,intent,0);
+        long interval= 60*1000;
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(System.currentTimeMillis());
+        calendar.add(Calendar.SECOND, 20);
         AlarmManager alarmManager= (AlarmManager)getSystemService(ALARM_SERVICE);
-        alarmManager.set(AlarmManager.RTC_WAKEUP,System.currentTimeMillis()+10000,pendingIntent);
+        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),interval,pendingIntent);
         Toast.makeText(this,"Alarm set in 10 secs",Toast.LENGTH_SHORT).show();
     }
 
