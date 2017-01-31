@@ -24,7 +24,7 @@ public class MainActivity extends Activity {
 
 
     public void startService(View view){
-//        startService(new Intent(getBaseContext(),Background.class));
+//        startService(new Intent(getBaseContext(),Background.class))
         Intent intent= new Intent(MainActivity.this,Broadcast.class);
         //performing a broadcast with PendingIntent
         PendingIntent pendingIntent= PendingIntent.getBroadcast(

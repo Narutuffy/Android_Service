@@ -16,7 +16,6 @@
             </intent-filter>
         </activity>
 
-       <!--<service android:name=".Background" />-->
         <receiver android:name=".Broadcast"/>
         <activity android:name=".Popup"
             android:label="Pop-up"
