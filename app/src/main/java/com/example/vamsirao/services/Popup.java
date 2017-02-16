@@ -26,7 +26,7 @@ public class Popup extends Activity {
         MediaController mediaController= new MediaController(this);
         mediaController.setAnchorView(videoView);
         //specify the location of media file
-        Uri uri= Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.coke_ad);
+        Uri uri= Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.ad1);
         //Setting Mediacontroller and URI, then starting the Video View
         videoView.setMediaController(mediaController);
         videoView.setVideoURI(uri);
