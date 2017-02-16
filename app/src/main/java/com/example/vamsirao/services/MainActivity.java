@@ -19,11 +19,23 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Intent intent= new Intent(MainActivity.this,Broadcast.class);
+        //performing a broadcast with PendingIntent
+        PendingIntent pendingIntent= PendingIntent.getBroadcast(
+                this.getApplicationContext(),0,intent,0);
+        long interval= 1*60*1000;
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(System.currentTimeMillis());
+        calendar.add(Calendar.SECOND, 60);
+        AlarmManager alarmManager= (AlarmManager)getSystemService(ALARM_SERVICE);
+        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),interval,pendingIntent);
+        Toast.makeText(this,"Pop-up set in 1min",Toast.LENGTH_SHORT).show();
+        finish();
     }
 
 
 
-    public void startService(View view){
+/*    public void startService(View view){
 //        startService(new Intent(getBaseContext(),Background.class))
         Intent intent= new Intent(MainActivity.this,Broadcast.class);
         //performing a broadcast with PendingIntent
@@ -36,9 +48,9 @@ public class MainActivity extends Activity {
         AlarmManager alarmManager= (AlarmManager)getSystemService(ALARM_SERVICE);
         alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),interval,pendingIntent);
         Toast.makeText(this,"Pop-up set in 1min",Toast.LENGTH_SHORT).show();
-    }
+    }*/
 
-    public void stopService(View view){
+  /*  public void stopService(View view){
         //Creating exactly the same pending intent which was used to broadcast, to cancel
         Intent intent= new Intent(MainActivity.this,Broadcast.class);
         AlarmManager alarmManager = (AlarmManager) this.getSystemService(Context.ALARM_SERVICE);
@@ -48,5 +60,5 @@ public class MainActivity extends Activity {
 
 
     }
-
+*/
 }
