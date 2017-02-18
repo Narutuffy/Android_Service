@@ -54,7 +54,7 @@ public class MainActivity extends Activity {
         //Creating exactly the same pending intent which was used to broadcast, to cancel
         Intent intent= new Intent(MainActivity.this,Broadcast.class);
         AlarmManager alarmManager = (AlarmManager) this.getSystemService(Context.ALARM_SERVICE);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this.getApplicationContext(), 0, intent, 0);
+            PendingIntent pendingIntent = PendingIntent.getBroadcast(this.getApplicationContext(), 0, intent, 0);
         alarmManager.cancel(pendingIntent);
         Toast.makeText(this,"Pop-ups cancelled",Toast.LENGTH_SHORT).show();
 

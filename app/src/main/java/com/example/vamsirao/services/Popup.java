@@ -110,7 +110,7 @@ public class Popup extends Activity {
         MediaPlayer mp = MediaPlayer.create(this, uri);
         int duration = mp.getDuration();
         int adN=Integer.parseInt(s)+1;
-        if(adN>2)
+        if(adN>3)
             adN=1;
         s=Integer.toString(adN);
         try {
@@ -131,6 +131,6 @@ public class Popup extends Activity {
                 finish();
                 System.exit(0);
             }
-        },duration);
+        },duration+1000);
     }
 }
